@@ -34,13 +34,13 @@ function uuidv4() {
     );
   }
  let stdArr= [];
-if (JSON.parse(localStorage.getItem("stdArr"))) {
+if (localStorage.getItem("stdArr")) {
   stdArr=JSON.parse(localStorage.getItem("stdArr"));
     trTemplating(stdArr);
     para.innerHTML=`No. of students are ${stdArr.length}`
 }else{
  
-  para.innerHTML=`Nothing to show`
+  para.innerHTML=`No Student Data Added Yet!!!`
   stdTable.classList.add("d-none")
 
 }
@@ -116,7 +116,7 @@ const onEdit=(eve)=>{
          if(stdArr.length) {
             para.innerHTML=`No. of students are ${stdArr.length}`
          }else{         
-            para.innerHTML=`Nothing to show`
+            para.innerHTML=`No Student Data Added Yet!!!`
             stdTable.classList.add("d-none")
          }
       }
