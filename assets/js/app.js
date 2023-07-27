@@ -34,7 +34,7 @@ function uuidv4() {
     );
   }
  let stdArr= [];
-if (localStorage.getItem("stdArr") || JSON.parse(localStorage.getItem("stdArr")).length ) {
+if (localStorage.getItem("stdArr")) {
   stdArr=JSON.parse(localStorage.getItem("stdArr"));
     trTemplating(stdArr);
     para.innerHTML=`No. of students are ${stdArr.length}`
@@ -115,7 +115,8 @@ const onEdit=(eve)=>{
       
          if(stdArr.length) {
             para.innerHTML=`No. of students are ${stdArr.length}`
-         }else{         
+         }else{
+          localStorage.removeItem("stdArr")         
             para.innerHTML=`No Student Data Added Yet!!!`
             stdTable.classList.add("d-none")
          }
