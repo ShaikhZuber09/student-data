@@ -34,7 +34,7 @@ function uuidv4() {
     );
   }
  let stdArr= [];
-if (localStorage.getItem("stdArr")) {
+if (localStorage.getItem("stdArr") || JSON.parse(localStorage.getItem("stdArr")).length ) {
   stdArr=JSON.parse(localStorage.getItem("stdArr"));
     trTemplating(stdArr);
     para.innerHTML=`No. of students are ${stdArr.length}`
